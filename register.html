@@ -6,7 +6,13 @@
   <title>ลงทะเบียนเข้าใช้งาน KruJuthamas-Math</title>
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root { --primary: #5C4D41; --secondary: #8B7355; --bg: #FDFBF7; --card-bg: #FFFFFF; }
+    /* ปรับโทนสีตรงนี้ให้เป็นสีเขียวพาสเทล */
+    :root { 
+      --primary: #7EAA92; 
+      --secondary: #9ED2BE; 
+      --bg: #F5F9F6; 
+      --card-bg: #FFFFFF; 
+    }
     body { font-family: 'Sarabun', sans-serif; background-color: var(--bg); color: #333; margin: 0; padding: 20px; display: flex; justify-content: center; }
     .container { width: 100%; max-width: 400px; background: var(--card-bg); padding: 30px 20px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
     h2 { text-align: center; color: var(--primary); margin-bottom: 5px; font-weight: 700; }
@@ -14,8 +20,10 @@
     .form-group { margin-bottom: 15px; }
     label { display: block; font-size: 14px; font-weight: 600; color: var(--primary); margin-bottom: 5px; }
     input, select { width: 100%; padding: 10px; border: 1px solid #E6DFD3; border-radius: 8px; font-size: 14px; font-family: 'Sarabun', sans-serif; box-sizing: border-box; background-color: #FAFAFA; transition: 0.3s; }
-    input:focus, select:focus { outline: none; border-color: var(--secondary); background-color: #FFF; box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.2); }
-    .btn-submit { width: 100%; padding: 12px; background-color: var(--primary); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 10px; transition: 0.3s; box-shadow: 0 4px 10px rgba(92, 77, 65, 0.2); }
+    /* ปรับสีเงา rgba ให้เป็นโทนสีเขียวพาสเทล (อิงจากสี --secondary) */
+    input:focus, select:focus { outline: none; border-color: var(--secondary); background-color: #FFF; box-shadow: 0 0 0 2px rgba(158, 210, 190, 0.4); }
+    /* ปรับสีเงา rgba ให้เป็นโทนสีเขียวพาสเทล (อิงจากสี --primary) */
+    .btn-submit { width: 100%; padding: 12px; background-color: var(--primary); color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; margin-top: 10px; transition: 0.3s; box-shadow: 0 4px 10px rgba(126, 170, 146, 0.3); }
     .btn-submit:hover { background-color: var(--secondary); transform: translateY(-2px); }
     .btn-submit:disabled { background-color: #CCC; cursor: not-allowed; transform: none; box-shadow: none; }
     #message { text-align: center; margin-top: 15px; font-weight: 600; font-size: 14px; padding: 10px; border-radius: 8px; display: none; }
@@ -69,7 +77,7 @@
       </div>
     </div>
     
-    <button type="submit" id="submitBtn" class="btn-submit">🤎 บันทึกข้อมูลลงทะเบียน</button>
+    <button type="submit" id="submitBtn" class="btn-submit">💚 บันทึกข้อมูลลงทะเบียน</button>
     <div id="message"></div>
   </form>
 </div>
@@ -117,13 +125,13 @@
           btn.innerText = "ลงทะเบียนเรียบร้อย";
         } else {
           showMessage("❌ ข้อผิดพลาด: " + data.message, "error");
-          btn.innerText = "🤎 บันทึกข้อมูลลงทะเบียน";
+          btn.innerText = "💚 บันทึกข้อมูลลงทะเบียน";
           btn.disabled = false;
         }
       })
       .catch(error => {
         showMessage("❌ เชื่อมต่อล้มเหลว กรุณาลองใหม่อีกครั้ง", "error");
-        btn.innerText = "🤎 บันทึกข้อมูลลงทะเบียน";
+        btn.innerText = "💚 บันทึกข้อมูลลงทะเบียน";
         btn.disabled = false;
       });
   });
